@@ -22,6 +22,28 @@ def login(request,user_name, password):
   
    return render(request, "course/home.html")
 
+#user_name =input("emter your name: ")
+#password=input("enter your password: ")
 
-def signup(request):
-   return render(request, "course/signup.html")
+def signup(request, user_name, password):
+   if user_name=="attiq" and password=="123":
+      return render(request, "course/signup.html")
+   return render(request, "course/home.html")
+
+
+
+def login_view(request):
+    if request.method == 'POST':
+       
+        return redirect('dashboard')
+    else:
+        return render(request, 'course/login.html')
+    
+
+
+def dashboard_view(request):
+    d={"name":"Attiq Ur Rehman",
+       }
+    
+    return render(request, 'course/home.html', d)
+
