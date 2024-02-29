@@ -30,7 +30,7 @@ def signup(request, user_name, password):
       return render(request, "course/signup.html")
    return render(request, "course/home.html")
 
-
+.0 
 
 def login_view(request):
     if request.method == 'POST':
